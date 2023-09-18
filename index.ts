@@ -21,7 +21,7 @@ export default class Logs extends EventEmitter {
         define: {
           timestamps: true
         },
-      }).sync().catch(e => {
+      }).sync().catch((e: any) => {
         throw new Error(`데이터 베이스 서버에 연결도중 에러가 발생하였습니다. : ${e.message}`)
       })
     } else if (data.type == `Mongo`) {
